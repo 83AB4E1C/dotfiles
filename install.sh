@@ -62,6 +62,8 @@ symbol_link $(pwd)/wezterm ~/.config/wezterm
 symbol_link $(pwd)/kitty ~/.config/kitty
 symbol_link $(pwd)/fish ~/.config/fish
 symbol_link $(pwd)/awesome ~/.config/awesome
+symbol_link $(pwd)/.zshrc ~/.zsh
+symbol_link $(pwd)/.p10k.zsh ~/.p10k.zsh
 
 case $1 in
   "prepare")
