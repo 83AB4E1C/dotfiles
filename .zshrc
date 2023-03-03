@@ -62,18 +62,18 @@ alias vi="nvim"
 
 export EDITOR='vi'
 # environment variable
-lsp_lua="/usr/local/sumneko_lua/bin"
-lsp_java="/usr/local/jdtls/bin"
+lsp_rust="$HOME/.local/share/nvim/lsp_home/rust-language-server"
+lsp_lua="$HOME/.local/share/nvim/lsp_home/lua-language-server/bin"
 lsp_go="/home/mdd/go/bin"
 lsp_zig="/usr/local/zig"
 case ":${PATH}:" in
     *:"/usr/local/sumneko_lua/bin":*)
         ;;
     *)
-        PATH="$lsp_lua:$lsp_java:$lsp_go:$lsp_zig:$PATH"
+        PATH="$lsp_lua:$lsp_rust:$lsp_go:$lsp_zig:$PATH"
         ;;
 esac
- #  "$HOME/.cargo/env"
+.  "$HOME/.cargo/env"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
