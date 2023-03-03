@@ -1,0 +1,10 @@
+static const char *colors[][3]           = {          /* 颜色设置 ColFg, ColBg, ColBorder */ 
+    [SchemeNorm] = { "#bbbbbb", "#1b1b26", "#444444" },
+    [SchemeSel] = { "#917bb5", "#1b1b26", "#917bb5" },
+    [SchemeSelGlobal] = { "#917bb5", "#1b1b26", "#FFC0CB" },
+    [SchemeHid] = { "#dddddd", NULL, NULL },
+    [SchemeSystray] = { NULL, "#1b1b26", NULL },
+    [SchemeUnderline] = { "#917bb5", NULL, NULL }, 
+    [SchemeNormTag] = { "#bbbbbb", "#1b1b26", NULL },
+    [SchemeSelTag] = { "#eeeeee", "#1b1b26", NULL },
+    [SchemeBarEmpty] = { NULL, "#1b1b26", NULL },
