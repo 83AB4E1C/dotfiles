@@ -39,7 +39,7 @@ prepare() {
   sudo cp -r ~/.dotfiles/fonts/* /usr/share/fonts
   sudo fc-cache
   sudo apt update && sudo apt upgrade
-  sudo apt install -y fish golang nodejs npm python3-pip wget curl unzip clangd jq fcitx5 fcitx5-rime alsa-util alsamixer
+  sudo apt install -y fish golang nodejs npm python3-pip wget curl unzip clangd jq fcitx5 fcitx5-rime alsa-util alsamixer i3 i3blocks
   curl -fLO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb
   sudo apt install ./nvim-linux64.deb
   sudo chsh -s /usr/bin/fish md
@@ -62,6 +62,7 @@ symbol_link $(pwd)/wezterm ~/.config/wezterm
 symbol_link $(pwd)/kitty ~/.config/kitty
 symbol_link $(pwd)/fish ~/.config/fish
 symbol_link $(pwd)/awesome ~/.config/awesome
+symbol_link $(pwd)/i3 ~/.config/i3
 symbol_link $(pwd)/.zshrc ~/.zsh
 symbol_link $(pwd)/.p10k.zsh ~/.p10k.zsh
 
