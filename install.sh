@@ -36,6 +36,7 @@ prepare() {
   if [[ -d "/usr/local/bin/oh-my-posh" ]]; then
     exit 1
   fi
+  tar -xvf ~/.dotfiles/fonts/md.tar.gz -C ~/.dotfiles/fonts
   sudo cp -r ~/.dotfiles/fonts/* /usr/share/fonts
   sudo fc-cache
   sudo apt update && sudo apt upgrade
