@@ -20,11 +20,13 @@ lsp_install() {
   lua_lsp_home=$lsp_home/lua-language-server
   mkdir -p $lua_lsp_home
   lua_lsp_tag=$(curl -s https://api.github.com/repos/LuaLS/lua-language-server/releases/latest | jq -r '.tag_name')
+  [ lua_lsp_tag == "null" ] || [ lua_lsp_tag == "" ]&&  echo "fetch tag fail"&& exit 1
   curl -fL https://github.com/LuaLS/lua-language-server/releases/download/$lua_lsp_tag/lua-language-server-$lua_lsp_tag-linux-x64.tar.gz -o $lua_lsp_home/lua-language-server.tar.gz
   tar -xf $lua_lsp_home/lua-language-server.tar.gz -C $lua_lsp_home
   rm -rf $lua_lsp_home/lua-language-server.tar.gz
 
   rust_lsp_tag=$(curl -s https://api.github.com/repos/rust-lang/rust-analyzer/releases/latest | jq -r '.tag_name')
+  [ rust_lsp_tag  == "null" ]  || [ rust_lsp_tag == "" ] &&  echo "fetch tag fail"&& exit 1
   rust_lsp_home=$lsp_home/rust-language-server
   mkdir -p $rust_lsp_home
   curl -fL https://github.com/rust-lang/rust-analyzer/releases/download/$rust_lsp_tag/rust-analyzer-x86_64-unknown-linux-gnu.gz -o $rust_lsp_home/rust-analyzer.gz
@@ -33,9 +35,6 @@ lsp_install() {
 }
 
 prepare() {
-  if [[ -d "/usr/local/bin/oh-my-posh" ]]; then
-    exit 1
-  fi
   tar -xvf ~/.dotfiles/fonts/md.tar.gz -C ~/.dotfiles/fonts
   sudo cp -r ~/.dotfiles/fonts/* /usr/share/fonts
   sudo fc-cache
@@ -64,7 +63,7 @@ symbol_link $(pwd)/kitty ~/.config/kitty
 symbol_link $(pwd)/fish ~/.config/fish
 symbol_link $(pwd)/awesome ~/.config/awesome
 symbol_link $(pwd)/i3 ~/.config/i3
-symbol_link $(pwd)/.zshrc ~/.zsh
+symbol_link $(pwd)/.zshrc ~/.zshrc
 symbol_link $(pwd)/.p10k.zsh ~/.p10k.zsh
 
 case $1 in
@@ -72,7 +71,6 @@ case $1 in
     prepare
     ;;
   "lsp_install")
-    prepare
     lsp_install
     ;;
   *)

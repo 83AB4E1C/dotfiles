@@ -57,7 +57,7 @@ alias ls="ls --color=auto"
 alias ll="ls -lh --color=auto"
 alias la="ls -Alh --color=auto"
 alias rc="source ~/.zshrc"
-alias vp "http_proxy=http://192.168.0.110:7890;https_proxy=http://192.168.0.110:7890"
+alias vp="http_proxy=http://192.168.0.110:7890;https_proxy=http://192.168.0.110:7890"
 alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias vi="nvim"
 
@@ -65,7 +65,7 @@ export EDITOR='vi'
 # environment variable
 lsp_rust="$HOME/.local/share/nvim/lsp_home/rust-language-server"
 lsp_lua="$HOME/.local/share/nvim/lsp_home/lua-language-server/bin"
-lsp_go="/home/mdd/go/bin"
+lsp_go="$HOME/go/bin"
 lsp_zig="/usr/local/zig"
 case ":${PATH}:" in
     *:"/usr/local/sumneko_lua/bin":*)
