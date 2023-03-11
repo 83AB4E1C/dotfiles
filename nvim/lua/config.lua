@@ -73,7 +73,7 @@ function config.nvim_treesitter()
   require('nvim-treesitter.configs').setup({
     ensure_installed = {
       'c', 'cpp', 'go', 'lua', 'rust', 'python', 'cmake', 'ninja',
-      'make', 'bash', 'css', 'html', 'tsx', 'typescript', 'markdown',
+      'make', 'bash', 'css', 'html', 'javascript', 'tsx', 'typescript', 'markdown',
       'markdown_inline',
     },
     highlight = {
