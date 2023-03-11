@@ -12,6 +12,7 @@ lsp_install() {
   sudo npm i -g typescript typescript-language-server
   sudo npm i -g dockerfile-language-server-nodejs
   sudo npm i -g bash-language-server
+  sudo npm install -g @tailwindcss/language-server
   go install golang.org/x/tools/gopls@latest
   lsp_home=$HOME/.local/share/nvim/lsp_home
   [[ -d $lsp_home ]] && rm -rf $lsp_home
